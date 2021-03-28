@@ -6,11 +6,63 @@
 //
 
 import SwiftUI
+import RealityKit
 
 struct ContentView: View {
+    
+    
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        
+        NavigationView {
+            VStack(alignment: .center) {//vs1
+                
+                Image("augmenteAlgo")
+                    
+                    
+                    .edgesIgnoringSafeArea(.top)
+                    
+                    .frame(minWidth: 0, maxWidth: UIScreen.main.bounds.width)
+            
+                
+                VStack(alignment: .center){
+                    
+                    
+                    
+                    NavigationLink(destination: arView()) {
+                        
+                        Image("go")
+                      
+                        
+                    }
+                    
+                    
+                    
+                }
+                
+                VStack(alignment: .leading) {//vs1
+                    
+                    Text("3DLIFESTUDIO")
+                        .font(.custom("Avenir-Bold", size: 10))
+                        
+                        .foregroundColor(Color.gray)
+                        .multilineTextAlignment(.leading)
+                        .padding([.leading, .bottom], 10.0)
+                    
+                }
+                
+                
+                .frame(minWidth: 0, maxWidth: UIScreen.main.bounds.width)
+                .edgesIgnoringSafeArea(.all)
+                .background(Color.white)
+            }
+            .background(Color.white)
+            
+            .edgesIgnoringSafeArea(.all)
+            
+        }
+        
     }
 }
 

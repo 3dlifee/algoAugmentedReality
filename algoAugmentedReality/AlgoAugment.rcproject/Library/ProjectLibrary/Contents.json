@@ -1,0 +1,32 @@
+[
+  {
+    "libraryIdentifier" : "146f4985eaaac95107cdc280350c05dd",
+    "format" : "image",
+    "displayName" : "buyBtnBlue@2x.png"
+  },
+  {
+    "libraryIdentifier" : "337a816f14e3a78013bb9aace16e8ce9",
+    "format" : "image",
+    "displayName" : "algorand_logo_mark_black.png"
+  },
+  {
+    "libraryIdentifier" : "53231cde946a114c5717656b8102150c",
+    "format" : "image",
+    "displayName" : "buyPizza@2x.png"
+  },
+  {
+    "libraryIdentifier" : "7acaa39e927a32a520bf6511e523002a",
+    "format" : "image",
+    "displayName" : "Algorand_Foundation.jpeg"
+  },
+  {
+    "libraryIdentifier" : "4090c396c926475f2491481db454604e",
+    "format" : "image",
+    "displayName" : "order@2x.png"
+  },
+  {
+    "libraryIdentifier" : "8bb4f7354d45e70377ccaf7941cdf1c8",
+    "format" : "model",
+    "displayName" : "algo3dMesh.usdz"
+  }
+]
