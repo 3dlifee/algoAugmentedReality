@@ -109,7 +109,6 @@ func goTransaction()  {
                 .build()
         
             
-            
             let signedTransaction=account.signTransaction(tx: tx!)
             
             let encodedTrans:[Int8]=CustomEncoder.encodeToMsgPack(signedTransaction)
