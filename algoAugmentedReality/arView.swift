@@ -107,6 +107,7 @@ func goTransaction()  {
                 .note("Swift Algo sdk is cool".bytes)
                 .suggestedParams(params: paramResponse.data!)
                 .build()
+        
             
             
             let signedTransaction=account.signTransaction(tx: tx!)
