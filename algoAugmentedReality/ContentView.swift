@@ -15,9 +15,11 @@ struct ContentView: View {
     var body: some View {
         
         
+//
         NavigationView {
+            
             VStack(alignment: .center) {//vs1
-                
+              
                 Image("augmenteAlgo")
                     
                     
@@ -28,7 +30,7 @@ struct ContentView: View {
                 
                 VStack(alignment: .center){
                     
-                    
+                   
                     
                     NavigationLink(destination: arView()) {
                         
@@ -37,9 +39,9 @@ struct ContentView: View {
                         
                     }
                     
+                    }
                     
-                    
-                }
+              
                 
                 VStack(alignment: .leading) {//vs1
                     
@@ -62,8 +64,9 @@ struct ContentView: View {
             .edgesIgnoringSafeArea(.all)
             
         }
-        
+        .navigationViewStyle(StackNavigationViewStyle())
     }
+   
 }
 
 struct ContentView_Previews: PreviewProvider {

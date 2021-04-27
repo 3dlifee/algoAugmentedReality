@@ -30,7 +30,7 @@ struct arView: View {
 struct ARViewContainer: UIViewRepresentable {
     
     @State var ALGOD_API_ADDR="https://testnet-algorand.api.purestake.io/ps2"
-    @State var ALGOD_API_TOKEN="Gxxxxxxxxxxxxxxxxxxxxxxxxx"
+    var ALGOD_API_TOKEN="G----------------------------------"
     @State var ALGOD_API_PORT=""
     
    
@@ -81,34 +81,35 @@ func goTransaction()  {
     
     do {
         
-        let mnemonic = "star star star star star star star star star star star star star star star star star star star star star star star star star"
+        let mnemonic = "digital music music music crew review music unit finger music music music special music special review cost special music music music review review music music"
+        
         
         let account = try Account(mnemonic)
         //all fine with jsonData here
         
         let senderAddress = account.getAddress()
-        let receiverAddress = try! Address("K--------------------------")
-        
+        let receiverAddress = try! Address("ICUJJVODN5F6CYMRZYF4UJJV----------------------Y")
+       
         
       
         
         algodClient.transactionParams().execute(){ paramResponse in
             if(!(paramResponse.isSuccessful)){
                 print(paramResponse.errorDescription!);
-                print("passou")
+                print("transaction OK!")
                 return;
             }
             
             
-            let tx = Transaction.paymentTransactionBuilder().setSender(senderAddress)
-                .amount(10)
+            let tx = try? Transaction.paymentTransactionBuilder().setSender(senderAddress)
+                .amount(1)
                 .receiver(receiverAddress)
                 .note("Swift Algo sdk is cool".bytes)
                 .suggestedParams(params: paramResponse.data!)
                 .build()
             
             
-            let signedTransaction=account.signTransaction(tx: tx)
+            let signedTransaction=account.signTransaction(tx: tx!)
             
             let encodedTrans:[Int8]=CustomEncoder.encodeToMsgPack(signedTransaction)
             
