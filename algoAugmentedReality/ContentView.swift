@@ -10,38 +10,27 @@ import RealityKit
 
 struct ContentView: View {
     
-    
-    
     var body: some View {
         
-        
-//
         NavigationView {
             
             VStack(alignment: .center) {//vs1
-              
+                
                 Image("augmenteAlgo")
-                    
                     
                     .edgesIgnoringSafeArea(.top)
                     
                     .frame(minWidth: 0, maxWidth: UIScreen.main.bounds.width)
-            
                 
                 VStack(alignment: .center){
-                    
-                   
                     
                     NavigationLink(destination: arView()) {
                         
                         Image("go")
-                      
                         
                     }
                     
-                    }
-                    
-              
+                }
                 
                 VStack(alignment: .leading) {//vs1
                     
@@ -51,24 +40,20 @@ struct ContentView: View {
                         .foregroundColor(Color.gray)
                         .multilineTextAlignment(.leading)
                         .padding([.leading, .bottom], 10.0)
-                    
                 }
-                
                 
                 .frame(minWidth: 0, maxWidth: UIScreen.main.bounds.width)
                 .edgesIgnoringSafeArea(.all)
                 .background(Color.white)
             }
             .background(Color.white)
-            
-            
             .edgesIgnoringSafeArea(.all)
             
         }
         .navigationViewStyle(StackNavigationViewStyle())
         
     }
-   
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

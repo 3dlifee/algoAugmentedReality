@@ -28,5 +28,10 @@
     "libraryIdentifier" : "8bb4f7354d45e70377ccaf7941cdf1c8",
     "format" : "model",
     "displayName" : "algo3dMesh.usdz"
+  },
+  {
+    "libraryIdentifier" : "5c6d47ecdf309e78d80a4fd3bb58e249",
+    "format" : "image",
+    "displayName" : "algorand.jpeg"
   }
 ]

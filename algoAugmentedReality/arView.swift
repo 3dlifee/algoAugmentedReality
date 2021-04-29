@@ -12,18 +12,15 @@ import swift_algorand_sdk
 
 struct arView: View {
     
-    
-    
     var body: some View {
         return VStack {
-         
+            
             ARViewContainer().edgesIgnoringSafeArea(.all)
-
-         
+            
+        }
+        
     }
- 
-  }
- 
+    
 }
 
 
@@ -33,17 +30,13 @@ struct ARViewContainer: UIViewRepresentable {
     var ALGOD_API_TOKEN="G----------------------------------"
     @State var ALGOD_API_PORT=""
     
-   
     @State private var transactionIsShowing = false
     
     func makeUIView(context: Context) -> ARView{
         
-        
         let arView = ARView(frame:.zero)
         
         let algoAnchor = try! AlgoAugment.loadRussPizza()
-        
-        
         
         let sunInfoAction = algoAnchor.actions.allActions.filter({$0.identifier == "buy"}).first
         sunInfoAction?.onAction = { entity in
@@ -53,29 +46,21 @@ struct ARViewContainer: UIViewRepresentable {
                 
                 algoAnchor.notifications.showTransaction.post()
             }
-           
-           
+            
         }
         
         arView.scene.anchors.append(algoAnchor)
         
-        
         return arView
     }
     
-    
-    
     func updateUIView(_ uiView: ARView, context: Context) {
-        
-      
         
     }
     
 
-
 func goTransaction()  {
-
-        
+    
     let algodClient=AlgodClient(host: ALGOD_API_ADDR, port: ALGOD_API_PORT, token: ALGOD_API_TOKEN)
     algodClient.set(key: "X-API-KeY")
     
@@ -89,9 +74,7 @@ func goTransaction()  {
         
         let senderAddress = account.getAddress()
         let receiverAddress = try! Address("ICUJJVODN5F6CYMRZYF4UJJV----------------------Y")
-       
-        
-      
+    
         
         algodClient.transactionParams().execute(){ paramResponse in
             if(!(paramResponse.isSuccessful)){
@@ -100,9 +83,8 @@ func goTransaction()  {
                 return;
             }
             
-            
             let tx = try? Transaction.paymentTransactionBuilder().setSender(senderAddress)
-                .amount(1)
+                .amount(1000000)
                 .receiver(receiverAddress)
                 .note("Swift Algo sdk is cool".bytes)
                 .suggestedParams(params: paramResponse.data!)
@@ -140,7 +122,6 @@ func goTransaction()  {
        
 //
 
-      
    }
 
 struct arView_Previews: PreviewProvider {
